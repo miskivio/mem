@@ -4,8 +4,11 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import colors from 'colors'
 
+import postRoutes from './routes/posts.js'
 
 const app = express()
+
+app.use('/posts', postRoutes)
 
 app.use(bodyParser.json({limit: "30mb", extended: "true"}))
 app.use(bodyParser.urlencoded({limit: "30mb", extended: "true"}))
@@ -19,3 +22,5 @@ mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: tru
 .then(()=> console.log('mongodb has been connected'.cyan))
 .then(()=>app.listen(PORT, () => console.log(`Server has been started on ${PORT}!`.yellow)))
 .catch((error)=> console.log(error.message))
+
+// 15:39
