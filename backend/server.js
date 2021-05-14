@@ -22,5 +22,3 @@ mongoose.connect(CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: tru
 .then(()=> console.log('mongodb has been connected'.cyan))
 .then(()=>app.listen(PORT, () => console.log(`Server has been started on ${PORT}!`.yellow)))
 .catch((error)=> console.log(error.message))
-
-// 15:39
